@@ -1,0 +1,30 @@
+{
+  "name": "desk-charms",
+  "productName": "Desk Charms",
+  "version": "0.1.0",
+  "description": "Lucky charms that dangle from the top of your Windows screen on a real physics string.",
+  "main": "src/main.js",
+  "author": "Heisenberg",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.heisenberg.deskcharms",
+    "productName": "Desk Charms",
+    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
